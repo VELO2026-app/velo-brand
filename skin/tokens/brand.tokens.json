@@ -11,6 +11,13 @@
           "file": "assets/fonts/marmelad-subset.woff2",
           "weight": 400
         }
+      ],
+      "contrastExceptions": [
+        {
+          "text": "velo.text.secondary",
+          "surface": "velo.bg.card.solid",
+          "reason": "The golden secondary text is 70% of the text hue on the white card (3.12:1). The look is kept as designed; a value at 4.5:1 or more is a designer decision."
+        }
       ]
     }
   }

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.1
+
+FE-230 (https://linear.app/velo-space/issue/FE-230): the package for the
+neutral velo core. velo no longer carries a golden look; everything golden
+comes from this package. Needs velo with FE-230 (contract `2.1`).
+
+- `skin/primer-package.yaml`: contract `2.1`.
+- `skin/tokens/skin.tokens.json`: `velo.text.secondary` (`rgba(76, 101, 137,
+  0.7)`) and `velo.bg.card.solid` (`#ffffff`), the golden values. 182 tokens.
+- `skin/tokens/brand.tokens.json`: `contrastExceptions` declares the pair
+  `velo.text.secondary` on `velo.bg.card.solid` (3.12:1) with its reason;
+  `validate-skin` reports it as a warning.
+
 ## 0.1.0
 
 FE-229 (https://linear.app/velo-space/issue/FE-229): the golden VELO look of

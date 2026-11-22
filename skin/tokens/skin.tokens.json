@@ -12,6 +12,11 @@
       },
       "subtle": {
         "$value": "color-mix(in srgb, var(--velo-blue-500) 6%, transparent)"
+      },
+      "card": {
+        "solid": {
+          "$value": "#ffffff"
+        }
       }
     },
     "scrim": {
@@ -20,6 +25,9 @@
     "text": {
       "primary": {
         "$value": "#4c6589"
+      },
+      "secondary": {
+        "$value": "rgba(76, 101, 137, 0.7)"
       },
       "muted": {
         "$value": "rgba(76, 101, 137, 0.5)"
