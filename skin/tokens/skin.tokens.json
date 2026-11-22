@@ -1,0 +1,700 @@
+{
+  "velo": {
+    "primary": {
+      "$value": "#627a9c",
+      "dark": {
+        "$value": "#4c6589"
+      }
+    },
+    "bg": {
+      "start": {
+        "$value": "var(--velo-white)"
+      },
+      "subtle": {
+        "$value": "color-mix(in srgb, var(--velo-blue-500) 6%, transparent)"
+      }
+    },
+    "scrim": {
+      "$value": "rgba(0, 0, 0, 0.5)"
+    },
+    "text": {
+      "primary": {
+        "$value": "#4c6589"
+      },
+      "muted": {
+        "$value": "rgba(76, 101, 137, 0.5)"
+      },
+      "placeholder": {
+        "$value": "rgba(76, 101, 137, 0.9)",
+        "faint": {
+          "$value": "#62748a"
+        }
+      },
+      "stroke": {
+        "strong": {
+          "$value": "0.3px"
+        }
+      }
+    },
+    "border": {
+      "$value": "var(--velo-blue-200)",
+      "light": {
+        "$value": "color-mix(in srgb, var(--velo-blue-200) 30%, transparent)"
+      },
+      "input": {
+        "focus": {
+          "$value": "var(--velo-border)"
+        }
+      },
+      "card": {
+        "$value": "var(--velo-white)"
+      },
+      "width": {
+        "$value": "1px"
+      }
+    },
+    "success": {
+      "$value": "var(--velo-teal-400)",
+      "text": {
+        "$value": "var(--velo-teal-700)"
+      }
+    },
+    "warning": {
+      "$value": "var(--velo-peach-300)",
+      "bg": {
+        "$value": "color-mix(in srgb, var(--velo-peach-300) 40%, transparent)"
+      },
+      "border": {
+        "$value": "var(--velo-peach-300)"
+      },
+      "text": {
+        "$value": "var(--velo-peach-700)",
+        "light": {
+          "$value": "var(--velo-peach-800)"
+        }
+      }
+    },
+    "error": {
+      "$value": "var(--velo-pink-300)",
+      "bg": {
+        "$value": "color-mix(in srgb, var(--velo-pink-100) 40%, transparent)",
+        "strong": {
+          "$value": "color-mix(in srgb, var(--velo-pink-300) 25%, transparent)"
+        }
+      },
+      "border": {
+        "$value": "var(--velo-pink-300)"
+      },
+      "text": {
+        "$value": "var(--velo-danger-text)"
+      }
+    },
+    "required": {
+      "done": {
+        "$value": "#3bb38a"
+      }
+    },
+    "danger": {
+      "text": {
+        "$value": "var(--velo-pink-700)"
+      }
+    },
+    "rating": {
+      "good": {
+        "$value": "var(--velo-pink-500)"
+      }
+    },
+    "analytics": {
+      "bad": {
+        "$value": "#fe9093"
+      },
+      "low": {
+        "$value": "#faaa63"
+      },
+      "neutral": {
+        "$value": "#f7cf17"
+      },
+      "good": {
+        "$value": "#b5eb88"
+      },
+      "fire": {
+        "$value": "#5abafd"
+      }
+    },
+    "radius": {
+      "4": {
+        "$value": "4px"
+      },
+      "8": {
+        "$value": "8px"
+      },
+      "9": {
+        "$value": "9px"
+      },
+      "10": {
+        "$value": "10px"
+      },
+      "12": {
+        "$value": "12px"
+      },
+      "22": {
+        "$value": "22px"
+      },
+      "badge": {
+        "$value": "5px"
+      },
+      "pill": {
+        "$value": "999px"
+      },
+      "sheet": {
+        "top": {
+          "$value": "30px 30px 0 0"
+        }
+      },
+      "bar": {
+        "top": {
+          "$value": "6px 6px 0 0"
+        }
+      }
+    },
+    "ease": {
+      "out": {
+        "$value": "cubic-bezier(0.22, 1, 0.36, 1)"
+      },
+      "in": {
+        "$value": "cubic-bezier(0.55, 0, 0.75, 0.2)",
+        "out": {
+          "$value": "cubic-bezier(0.65, 0, 0.35, 1)"
+        }
+      },
+      "breath": {
+        "$value": "cubic-bezier(0.37, 0, 0.63, 1)"
+      }
+    },
+    "dur": {
+      "pulse": {
+        "$value": "1800ms"
+      }
+    },
+    "skeleton": {
+      "delay": {
+        "$value": "300ms"
+      },
+      "fill": {
+        "$value": "var(--velo-glass-blue-15)"
+      }
+    },
+    "glass": {
+      "blue": {
+        "15": {
+          "$value": "color-mix(in srgb, var(--velo-blue-500) 15%, transparent)"
+        },
+        "30": {
+          "$value": "color-mix(\n    in srgb,\n    var(--velo-blue-500) 30%,\n    transparent\n  )"
+        },
+        "60": {
+          "$value": "color-mix(in srgb, var(--velo-blue-200) 60%, transparent)"
+        },
+        "200": {
+          "15": {
+            "$value": "color-mix(in srgb, var(--velo-blue-200) 15%, transparent)"
+          }
+        },
+        "700": {
+          "60": {
+            "$value": "color-mix(in srgb, var(--velo-blue-700) 60%, transparent)"
+          }
+        }
+      },
+      "teal": {
+        "30": {
+          "$value": "color-mix(in srgb, var(--velo-teal-400) 30%, transparent)"
+        },
+        "40": {
+          "$value": "color-mix(in srgb, var(--velo-teal-400) 40%, transparent)"
+        }
+      },
+      "peach": {
+        "40": {
+          "$value": "color-mix(in srgb, var(--velo-peach-300) 40%, transparent)"
+        }
+      },
+      "white": {
+        "12": {
+          "$value": "color-mix(in srgb, var(--velo-white) 12%, transparent)"
+        },
+        "16": {
+          "$value": "color-mix(in srgb, var(--velo-white) 16%, transparent)"
+        },
+        "18": {
+          "$value": "color-mix(in srgb, var(--velo-white) 18%, transparent)"
+        },
+        "20": {
+          "$value": "color-mix(in srgb, var(--velo-white) 20%, transparent)"
+        },
+        "25": {
+          "$value": "color-mix(\n    in srgb,\n    var(--velo-white) 25%,\n    transparent\n  )"
+        },
+        "30": {
+          "$value": "color-mix(\n    in srgb,\n    var(--velo-white) 30%,\n    transparent\n  )"
+        },
+        "35": {
+          "$value": "color-mix(\n    in srgb,\n    var(--velo-white) 35%,\n    transparent\n  )"
+        },
+        "70": {
+          "$value": "color-mix(in srgb, var(--velo-white) 70%, transparent)"
+        },
+        "90": {
+          "$value": "color-mix(\n    in srgb,\n    var(--velo-white) 90%,\n    transparent\n  )"
+        },
+        "01": {
+          "$value": "color-mix(in srgb, var(--velo-white) 1%, transparent)"
+        },
+        "05": {
+          "$value": "color-mix(in srgb, var(--velo-white) 5%, transparent)"
+        }
+      },
+      "pink": {
+        "40": {
+          "$value": "color-mix(\n    in srgb,\n    var(--velo-pink-300) 40%,\n    transparent\n  )"
+        }
+      },
+      "border": {
+        "$value": "var(--velo-white)"
+      }
+    },
+    "teal": {
+      "400": {
+        "$value": "#76dde6"
+      },
+      "600": {
+        "$value": "#2f9ea8"
+      },
+      "700": {
+        "$value": "#26767d"
+      }
+    },
+    "peach": {
+      "300": {
+        "$value": "#fbc088"
+      },
+      "500": {
+        "$value": "#d4863c"
+      },
+      "700": {
+        "$value": "#a16124"
+      },
+      "800": {
+        "$value": "#b45309"
+      }
+    },
+    "pink": {
+      "100": {
+        "$value": "#fde2e2"
+      },
+      "300": {
+        "$value": "#f795a2"
+      },
+      "500": {
+        "$value": "#d66674"
+      },
+      "700": {
+        "$value": "#ad3444"
+      }
+    },
+    "blue": {
+      "100": {
+        "$value": "#e2f0fd"
+      },
+      "200": {
+        "$value": "#abbfda"
+      },
+      "300": {
+        "$value": "#91a2ba"
+      },
+      "400": {
+        "$value": "#619cd2"
+      },
+      "500": {
+        "$value": "#627a9c"
+      },
+      "700": {
+        "$value": "#4c6589"
+      }
+    },
+    "sand": {
+      "100": {
+        "$value": "#fdf3e2"
+      }
+    },
+    "tg": {
+      "header": {
+        "$value": "#334d6e"
+      },
+      "bg": {
+        "$value": "#ffffff",
+        "kbd": {
+          "$value": "#727678"
+        }
+      }
+    },
+    "shadow": {
+      "glow": {
+        "$value": "0px 0px 20.9px 7px #ffffff",
+        "sm": {
+          "$value": "0 0 13.167px 8.82px #ffffff"
+        }
+      },
+      "glass": {
+        "$value": "inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.15),\n    0 8px 24px rgba(0, 0, 0, 0.08)"
+      },
+      "toast": {
+        "$value": "0 4px 12px rgba(0, 0, 0, 0.3)"
+      },
+      "switch": {
+        "$value": "0 1px 2px rgba(0, 0, 0, 0.2)"
+      }
+    },
+    "content": {
+      "width": {
+        "$value": "336px",
+        "narrow": {
+          "$value": "300px"
+        }
+      }
+    },
+    "screen": {
+      "width": {
+        "$value": "402px"
+      },
+      "padding": {
+        "$value": "var(--space-8)"
+      }
+    },
+    "rail": {
+      "pad": {
+        "x": {
+          "$value": "24px"
+        }
+      }
+    },
+    "fog": {
+      "z1": {
+        "$value": "8px"
+      },
+      "z2": {
+        "$value": "40px"
+      },
+      "z3": {
+        "$value": "70px"
+      },
+      "z4": {
+        "$value": "90px"
+      },
+      "list": {
+        "z3": {
+          "$value": "48px"
+        },
+        "z4": {
+          "$value": "0px"
+        }
+      },
+      "pd": {
+        "top": {
+          "gap": {
+            "$value": "25px"
+          },
+          "hard": {
+            "$value": "60px",
+            "form": {
+              "$value": "88px"
+            }
+          }
+        },
+        "bot": {
+          "fade": {
+            "$value": "50px"
+          },
+          "hard": {
+            "$value": "90px"
+          }
+        }
+      },
+      "headerless": {
+        "top": {
+          "$value": "20px"
+        }
+      },
+      "color": {
+        "$value": "#000000"
+      }
+    },
+    "nav": {
+      "active": {
+        "bg": {
+          "$value": "var(--velo-primary)",
+          "glass": {
+            "$value": "color-mix(\n    in srgb,\n    var(--velo-blue-500) 60%,\n    transparent\n  )"
+          }
+        }
+      },
+      "inactive": {
+        "bg": {
+          "$value": "color-mix(in srgb, var(--velo-blue-500) 15%, transparent)"
+        }
+      }
+    },
+    "card": {
+      "padding": {
+        "y": {
+          "$value": "13px"
+        },
+        "x": {
+          "$value": "15px"
+        }
+      },
+      "height": {
+        "list": {
+          "$value": "104px"
+        }
+      },
+      "gap": {
+        "icon": {
+          "title": {
+            "$value": "5px"
+          }
+        }
+      },
+      "meta": {
+        "row": {
+          "gap": {
+            "$value": "10px"
+          }
+        }
+      },
+      "letter": {
+        "spacing": {
+          "title": {
+            "$value": "0.36px"
+          },
+          "meta": {
+            "$value": "0.28px"
+          }
+        }
+      },
+      "iconcol": {
+        "w": {
+          "$value": "58px"
+        }
+      }
+    },
+    "banner": {
+      "padding": {
+        "$value": "15px"
+      },
+      "border": {
+        "width": {
+          "$value": "2px"
+        }
+      },
+      "min": {
+        "height": {
+          "$value": "64px"
+        }
+      },
+      "gap": {
+        "icon": {
+          "text": {
+            "$value": "var(--space-3)"
+          }
+        }
+      }
+    },
+    "white": {
+      "$value": "#ffffff"
+    },
+    "divider": {
+      "$value": "color-mix(\n    in srgb,\n    var(--velo-blue-500) 30%,\n    transparent\n  )",
+      "width": {
+        "$value": "3px"
+      }
+    },
+    "size": {
+      "10": {
+        "$value": "10px"
+      },
+      "16": {
+        "$value": "16px"
+      },
+      "35": {
+        "$value": "35px"
+      },
+      "36": {
+        "$value": "36px"
+      },
+      "38": {
+        "$value": "38px"
+      },
+      "40": {
+        "$value": "40px"
+      },
+      "41": {
+        "$value": "41px"
+      },
+      "44": {
+        "$value": "44px"
+      },
+      "46": {
+        "$value": "46px"
+      },
+      "48": {
+        "$value": "48px"
+      },
+      "50": {
+        "$value": "50px"
+      },
+      "56": {
+        "$value": "56px"
+      },
+      "60": {
+        "$value": "60px"
+      },
+      "104": {
+        "$value": "104px"
+      }
+    },
+    "inset": {
+      "12": {
+        "$value": "12px"
+      },
+      "row": {
+        "$value": "18px"
+      }
+    },
+    "textarea": {
+      "autogrow": {
+        "max": {
+          "$value": "240px"
+        }
+      }
+    },
+    "chat": {
+      "fog": {
+        "top": {
+          "$value": "96px"
+        }
+      }
+    },
+    "gap": {
+      "2": {
+        "$value": "2px"
+      },
+      "3": {
+        "$value": "3px"
+      },
+      "6": {
+        "$value": "6px"
+      },
+      "11": {
+        "$value": "11px"
+      },
+      "15": {
+        "$value": "15px"
+      },
+      "21": {
+        "$value": "21px"
+      }
+    },
+    "letter": {
+      "spacing": {
+        "05": {
+          "$value": "0.5px"
+        }
+      }
+    },
+    "write": {
+      "shadow": {
+        "active": {
+          "$value": "inset 0 1px 0 rgba(255, 255, 255, 0.75), inset 0 -1px 0 rgba(255, 255, 255, 0.2),\n    0 0 0 1px rgba(255, 255, 255, 0.18), 0 0 18px rgba(150, 190, 255, 0.2),\n    0 8px 30px rgba(0, 0, 0, 0.08)"
+        },
+        "focus": {
+          "$value": "inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(255, 255, 255, 0.25),\n    0 0 0 2px rgba(255, 255, 255, 0.35), 0 0 26px rgba(150, 190, 255, 0.32),\n    0 8px 30px rgba(0, 0, 0, 0.08)"
+        }
+      }
+    },
+    "effect": {
+      "focus": {
+        "glass": {
+          "$value": "0 0 0 3px var(--velo-glass-blue-15)"
+        }
+      }
+    },
+    "mood": {
+      "fill": {
+        "rose": {
+          "$value": "#f9cbd1"
+        },
+        "teal": {
+          "$value": "#bdecf1"
+        },
+        "peach": {
+          "$value": "#fddfc4"
+        }
+      }
+    },
+    "fs": {
+      "8": {
+        "$value": "8px"
+      },
+      "10": {
+        "$value": "10px"
+      },
+      "12": {
+        "$value": "12px"
+      },
+      "14": {
+        "$value": "14px"
+      },
+      "16": {
+        "$value": "16px"
+      },
+      "18": {
+        "$value": "18px"
+      },
+      "20": {
+        "$value": "20px"
+      },
+      "22": {
+        "$value": "22px"
+      },
+      "24": {
+        "$value": "24px"
+      },
+      "28": {
+        "$value": "28px"
+      },
+      "32": {
+        "$value": "32px"
+      },
+      "48": {
+        "$value": "48px"
+      }
+    },
+    "diary": {
+      "entry": {
+        "scale": {
+          "$value": "1.15"
+        }
+      }
+    }
+  },
+  "bare": {
+    "font-body": {
+      "$value": [
+        "Marmelad",
+        "Noto Sans",
+        "sans-serif"
+      ]
+    }
+  }
+}

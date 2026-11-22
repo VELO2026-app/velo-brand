@@ -1,0 +1,17 @@
+{
+  "$extensions": {
+    "velo-skin": {
+      "displayName": "VELO",
+      "shortName": "VELO",
+      "themeColor": "#334D6E",
+      "backgroundColor": "#ffffff",
+      "fonts": [
+        {
+          "family": "Marmelad",
+          "file": "assets/fonts/marmelad-subset.woff2",
+          "weight": 400
+        }
+      ]
+    }
+  }
+}
