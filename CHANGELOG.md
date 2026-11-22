@@ -1,0 +1,32 @@
+# Changelog
+
+## 0.1.0
+
+FE-229 (https://linear.app/velo-space/issue/FE-229): the golden VELO look of
+velo `deploy-machine` (commit 1b57405e) as a skin package, contract `2.0`.
+
+- `skin/tokens/skin.tokens.json`: 180 tokens at their golden values (every
+  `velo.*` colour, shadow, radius, size and `bare.font-body`).
+- `skin/tokens/brand.tokens.json`: VELO / VELO, `themeColor` `#334D6E`,
+  `backgroundColor` `#ffffff`, font Marmelad.
+- `skin/assets/`: logos, mandalas, favicon, PWA icons, `bg/background.webp`,
+  nine `onboarding/` illustrations, `fonts/marmelad-subset.woff2`
+  (Cyrillic + Latin subset, SIL OFL 1.1, text in `skin/LICENSE`).
+- Copied byte for byte from velo `frontend/public/`; nothing redrawn.
+
+Not in the package, on purpose (the golden value stays the product's):
+- 14 tokens the product re-sets in its `prefers-reduced-motion` block:
+  `--velo-dur-press`, `-fast`, `-base`, `-page`, `-page-exit`, `-tab`,
+  `-tab-out`, `-tab-in`, `-resize`, `-sheet`, `-sheet-exit`, `-calm`,
+  `-calm-long` (all `--velo-dur-*`) and `--velo-shift-page`. A skin's `:root`
+  rule comes after that block and would switch reduced motion off.
+- `velo.text.secondary` and `velo.bg.card.solid`. The golden pair measures
+  3.12:1, under the 4.5:1 gate of `validate-skin`; the gate skips a pair the
+  skin does not override. Carrying both would make `pnpm build` fail. This is
+  an open design decision (see `skin/README.md`).
+
+Checked against velo `deploy-machine` 1b57405e: `validate-skin` 0 fail, 0 warn;
+a build with this package against a build without it: same custom properties,
+same CSS rules, same manifests and static assets byte for byte; 19 key screens
+of `e2e/visual` pixel-identical. The only difference in `index.html` is the
+font preload, which points into `/skin/`.
