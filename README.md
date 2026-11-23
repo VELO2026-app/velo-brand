@@ -13,14 +13,16 @@ seeds/    (later) demo data (BE-232)
 Each subdirectory carries its own `primer-package.yaml`; ONE tag `vX.Y.Z`
 versions them together, and an instance takes this repository by that tag
 through `subpath` in the passport (`subpath` is required -- the repository
-root is not a package). X.Y.Z is the tag; the first one is not set yet:
+root is not a package). X.Y.Z is the tag: v0.1.0 (contract 2.0, any velo
+with skin contract 2.x), v0.1.1 (contract 2.1, velo with FE-230 and later):
 
 ```yaml
 packages:
   skin: { repo: git@github.com:VELO2026-app/velo-brand.git, version: X.Y.Z, subpath: skin }
 ```
 
-The repository is private: the machine reads it with its deploy key.
+The repository is public; the machine reads it with the deploy key of its
+passport, velo CI clones it over https (the skinned bundle budget, FE-230).
 
 Releases are tags; a released tag is never moved. The format and its checks
 are defined by the product: velo `tz-whitelabel.md` §3 / §3.2, engine
