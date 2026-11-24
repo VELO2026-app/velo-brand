@@ -14,7 +14,8 @@ Each subdirectory carries its own `primer-package.yaml`; ONE tag `vX.Y.Z`
 versions them together, and an instance takes this repository by that tag
 through `subpath` in the passport (`subpath` is required -- the repository
 root is not a package). X.Y.Z is the tag: v0.1.0 (contract 2.0, any velo
-with skin contract 2.x), v0.1.1 (contract 2.1, velo with FE-230 and later):
+with skin contract 2.x), v0.1.1 (contract 2.1, velo with FE-230 and later),
+v0.2.0 (contract 2.2, velo with FE-251 and later):
 
 ```yaml
 packages:

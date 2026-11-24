@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.2.0
+
+FE-251 (https://linear.app/velo-space/issue/FE-251): the support address
+comes from the brand package. velo no longer carries `support@velo.app`; the
+support screens of the user and the master show the address of the brand
+record, and no address line without one. Needs velo with FE-251 (contract
+`2.2`).
+
+- `skin/primer-package.yaml`: contract `2.2`.
+- `skin/tokens/brand.tokens.json`: `supportEmail` `support@velo.app`.
+
+**Order of release: merge the velo FE-251 PR first, then tag `v0.2.0`.** A
+velo older than FE-251 refuses `supportEmail` as an unknown field, so the
+package does not build there. After the tag, velo raises its CI pin
+(`.github/brand-skins.json`) and the passports move to `0.2.0`.
+
 ## 0.1.1
 
 FE-230 (https://linear.app/velo-space/issue/FE-230): the package for the
