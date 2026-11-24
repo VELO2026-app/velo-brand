@@ -5,9 +5,10 @@ velo `frontend/tokens.json` (`deploy-machine` 1b57405e); assets are the files
 of `frontend/public/` (icons, `bg/`, `onboarding/`, `fonts/`).
 
 ```
-primer-package.yaml          schema: 1, contract: "2.1"
+primer-package.yaml          schema: 1, contract: "2.2"
 tokens/brand.tokens.json     $extensions["velo-skin"]: displayName, shortName,
-                             themeColor, backgroundColor, fonts
+                             themeColor, backgroundColor, fonts,
+                             contrastExceptions, supportEmail
 tokens/skin.tokens.json      W3C DTCG values at the paths of velo's
                              frontend/tokens.json (velo.*, bare.font-body)
 assets/                      logos, mandalas, favicon, PWA icons;
