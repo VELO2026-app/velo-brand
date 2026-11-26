@@ -7,9 +7,24 @@
       "backgroundColor": "#ffffff",
       "fonts": [
         {
-          "family": "Marmelad",
-          "file": "assets/fonts/marmelad-subset.woff2",
+          "family": "VELO Marmelad",
+          "file": "assets/fonts/velo-marmelad-light.woff2",
+          "weight": 300
+        },
+        {
+          "family": "VELO Marmelad",
+          "file": "assets/fonts/velo-marmelad-regular.woff2",
           "weight": 400
+        },
+        {
+          "family": "VELO Marmelad",
+          "file": "assets/fonts/velo-marmelad-medium.woff2",
+          "weight": 500
+        },
+        {
+          "family": "VELO Marmelad",
+          "file": "assets/fonts/velo-marmelad-bold.woff2",
+          "weight": 700
         }
       ],
       "contrastExceptions": [
