@@ -8,11 +8,6 @@
       "fonts": [
         {
           "family": "VELO Marmelad",
-          "file": "assets/fonts/velo-marmelad-light.woff2",
-          "weight": 300
-        },
-        {
-          "family": "VELO Marmelad",
           "file": "assets/fonts/velo-marmelad-regular.woff2",
           "weight": 400
         },

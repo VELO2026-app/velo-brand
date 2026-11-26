@@ -15,7 +15,8 @@ Medium, Bold). Their metadata was set by `tools/patch-font-metadata.py`
 (Bold style bits, the VELO copyright line in nameID 0 and in the `.sfd`); the
 script is idempotent and changes nothing else.
 
-The package ships subsets, not these files. To rebuild them (needs `uvx`):
+The package ships subsets of Regular, Medium and Bold, not these files. Light is
+kept here as a source and is not shipped until the app uses it. To rebuild them (needs `uvx`):
 
 ```sh
 tools/subset-fonts.sh        # fonts-src/*.ttf -> skin/assets/fonts/*.woff2

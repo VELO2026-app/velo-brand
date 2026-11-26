@@ -33,7 +33,10 @@ WORK=$(mktemp -d)
 trap 'rm -rf "$WORK"' EXIT
 cd "$WORK"
 
-for style in Light Regular Medium Bold; do
+# Light is not shipped until the app uses it (owner, 26.11): its TTF and SFD stay
+# in fonts-src/. To ship it again, add Light to the list and to `fonts` of
+# skin/tokens/brand.tokens.json (weight 300).
+for style in Regular Medium Bold; do
   lower=$(printf '%s' "$style" | tr 'A-Z' 'a-z')
   uvx --with brotli==1.2.1 --from fonttools==4.69.1 pyftsubset \
     "$SRC/VELOMarmelad-$style.ttf" \

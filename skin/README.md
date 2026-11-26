@@ -21,21 +21,21 @@ LICENSE                      SIL OFL 1.1 of VELO Marmelad (the shipped font)
 ## Font: VELO Marmelad (FE-278)
 
 Marmelad, modified and renamed by VELO (SIL OFL 1.1, no reserved font name;
-the notice of the modification is in `LICENSE`). Four faces in one family, each
-a `woff2` subset of Latin + Cyrillic with the Ukrainian letters (і ї є ґ), the
+the notice of the modification is in `LICENSE`). Three faces of a four-face
+family (Light stays in `fonts-src/` until the app uses it), each a `woff2`
+subset of Latin + Cyrillic with the Ukrainian letters (і ї є ґ), the
 apostrophes (U+0027, U+2019, U+02BC), the punctuation and symbols the app text
 uses, and the currencies ₽ € ₴ (530 code points; kerning and ligatures kept,
 hinting dropped).
 
 | File (`assets/fonts/`) | Face | `weight` | Bytes |
 |---|---|---|---|
-| `velo-marmelad-light.woff2` | Light | 300 (not used by the app yet) | 40 332 |
 | `velo-marmelad-regular.woff2` | Regular | 400 (the only face velo preloads) | 23 916 |
 | `velo-marmelad-medium.woff2` | Medium | 500 | 39 440 |
 | `velo-marmelad-bold.woff2` | Bold | 700 | 40 712 |
 
 - `bare.font-body` names the family `VELO Marmelad`; `fonts` of the brand record
-  lists the four faces. velo writes one `@font-face` per face, so a face
+  lists the three faces. velo writes one `@font-face` per face, so a face
   loads when text of its weight is drawn; the first paint needs Regular only.
 - `velo.fw.medium` = 500 and `velo.fw.bold` = 700 map the app's emphasis steps
   (headings, buttons, titles; strong accents) to the Medium and Bold faces. The

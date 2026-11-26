@@ -3,20 +3,21 @@
 ## 0.3.0
 
 FE-278 (https://linear.app/velo-space/issue/FE-278): the golden skin gets its
-own fonts, VELO Marmelad (Light, Regular, Medium, Bold), instead of one
+own fonts, VELO Marmelad (Regular, Medium, Bold), instead of one
 Regular face with a browser-drawn bold. Owner's decision 26.11: weight 600
-becomes Medium 500, weight 700 becomes Bold 700, Light is not used yet. Needs
+becomes Medium 500, weight 700 becomes Bold 700. Light is not shipped until
+the app uses it (its TTF and SFD stay in `fonts-src/`). Needs
 velo with FE-278 (weight tokens `velo.fw.*`, preload of the regular face only);
 contract `2.4`.
 
 - `skin/primer-package.yaml`: contract `2.4` (the weight tokens `velo.fw.*`;
   velo FE-278 refuses them in a package that declares less).
-- `skin/assets/fonts/`: `marmelad-subset.woff2` (31 868 B) is replaced by four
-  subsets, `velo-marmelad-light|regular|medium|bold.woff2` (40 332, 23 916,
-  39 440, 40 712 B). Latin + Cyrillic with the Ukrainian letters, apostrophes,
+- `skin/assets/fonts/`: `marmelad-subset.woff2` (31 868 B) is replaced by three
+  subsets, `velo-marmelad-regular|medium|bold.woff2` (23 916, 39 440,
+  40 712 B). Latin + Cyrillic with the Ukrainian letters, apostrophes,
   punctuation, ₽ € ₴; hinting dropped.
-- `skin/tokens/brand.tokens.json`: `fonts` lists the four faces, family
-  `VELO Marmelad`, weights 300 / 400 / 500 / 700.
+- `skin/tokens/brand.tokens.json`: `fonts` lists the three faces, family
+  `VELO Marmelad`, weights 400 / 500 / 700.
 - `skin/tokens/skin.tokens.json`: `bare.font-body` is `VELO Marmelad, Noto Sans,
   sans-serif`; new `velo.fw.medium` = 500 and `velo.fw.bold` = 700. 184 tokens.
 - `skin/LICENSE`: the OFL text of VELO Marmelad with the VELO line (modified
@@ -40,7 +41,7 @@ From FE-278 on, `validate-skin` requires `2.4` for `velo.fw.*`.
 2. Merge this PR, then the owner tags `v0.3.0`.
 3. A velo PR raises the pin (`.github/brand-skins.json`, `skinned` of
    `frontend/bundle-budget.json`). It changes gold on screen (`visual-change`)
-   and grows the gold precache by about 113 KB (`bundle-growth`).
+   and grows the gold precache by about 73 KB (`bundle-growth`).
 4. The passports move to `0.3.0` after the velo rollout.
 
 ## 0.2.0
