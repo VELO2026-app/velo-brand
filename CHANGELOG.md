@@ -7,11 +7,13 @@ own fonts, VELO Marmelad (Light, Regular, Medium, Bold), instead of one
 Regular face with a browser-drawn bold. Owner's decision 26.11: weight 600
 becomes Medium 500, weight 700 becomes Bold 700, Light is not used yet. Needs
 velo with FE-278 (weight tokens `velo.fw.*`, preload of the regular face only);
-contract stays `2.2`.
+contract `2.4`.
 
+- `skin/primer-package.yaml`: contract `2.4` (the weight tokens `velo.fw.*`;
+  velo FE-278 refuses them in a package that declares less).
 - `skin/assets/fonts/`: `marmelad-subset.woff2` (31 868 B) is replaced by four
-  subsets, `velo-marmelad-light|regular|medium|bold.woff2` (40 328, 23 860,
-  39 396, 40 788 B). Latin + Cyrillic with the Ukrainian letters, apostrophes,
+  subsets, `velo-marmelad-light|regular|medium|bold.woff2` (40 332, 23 916,
+  39 440, 40 712 B). Latin + Cyrillic with the Ukrainian letters, apostrophes,
   punctuation, ₽ € ₴; hinting dropped.
 - `skin/tokens/brand.tokens.json`: `fonts` lists the four faces, family
   `VELO Marmelad`, weights 300 / 400 / 500 / 700.
@@ -21,9 +23,18 @@ contract stays `2.2`.
   and renamed, 2026); the scope section now names the font subsets.
 - `fonts-src/`: TTF and SFD sources of the four faces, `OFL.txt`, a README.
   `tools/subset-fonts.sh` rebuilds the `woff2` files from them.
+- Font metadata fixed by `tools/patch-font-metadata.py` (glyphs, widths and
+  layout tables untouched; checked against the original files): Bold is now
+  flagged Bold (`OS/2.fsSelection` BOLD, not REGULAR; `head.macStyle` bold; the
+  `.sfd` `StyleMap` 0x0020), and nameID 0 of all four faces, like the `.sfd`
+  `Copyright:`, carries `Copyright 2026 VELO.` Installed from `fonts-src/*.ttf`,
+  the four faces form one family "VELO Marmelad" (nameID 16 / 17: Light,
+  Regular, Medium, Bold; weight classes 300 / 400 / 500 / 700).
 
 **Order of release.** A velo older than FE-278 refuses `velo.fw.*` as unknown
-tokens, so the package does not build there.
+tokens, so the package does not build there. The contract minor cannot stop
+that earlier: an older reader checks the major only (the slot says `>=2,<3`).
+From FE-278 on, `validate-skin` requires `2.4` for `velo.fw.*`.
 1. Merge the velo FE-278 PR (weight tokens, Regular-only preload, 600 / 700
    replaced by the tokens). The CI pin stays on `v0.2.0`: gold does not change.
 2. Merge this PR, then the owner tags `v0.3.0`.

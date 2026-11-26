@@ -6,7 +6,7 @@ of `frontend/public/` (icons, `bg/`, `onboarding/`). The font is VELO Marmelad
 (since 0.3.0, FE-278).
 
 ```
-primer-package.yaml          schema: 1, contract: "2.2"
+primer-package.yaml          schema: 1, contract: "2.4"
 tokens/brand.tokens.json     $extensions["velo-skin"]: displayName, shortName,
                              themeColor, backgroundColor, fonts,
                              contrastExceptions, supportEmail
@@ -29,10 +29,10 @@ hinting dropped).
 
 | File (`assets/fonts/`) | Face | `weight` | Bytes |
 |---|---|---|---|
-| `velo-marmelad-light.woff2` | Light | 300 (not used by the app yet) | 40 328 |
-| `velo-marmelad-regular.woff2` | Regular | 400 (the only face velo preloads) | 23 860 |
-| `velo-marmelad-medium.woff2` | Medium | 500 | 39 396 |
-| `velo-marmelad-bold.woff2` | Bold | 700 | 40 788 |
+| `velo-marmelad-light.woff2` | Light | 300 (not used by the app yet) | 40 332 |
+| `velo-marmelad-regular.woff2` | Regular | 400 (the only face velo preloads) | 23 916 |
+| `velo-marmelad-medium.woff2` | Medium | 500 | 39 440 |
+| `velo-marmelad-bold.woff2` | Bold | 700 | 40 712 |
 
 - `bare.font-body` names the family `VELO Marmelad`; `fonts` of the brand record
   lists the four faces. velo writes one `@font-face` per face, so a face
@@ -42,7 +42,8 @@ hinting dropped).
   velo core keeps 600 / 700, so Goodo (variable Manrope) is unchanged.
 - The `woff2` files are built, not edited: `tools/subset-fonts.sh` reads the TTF
   files of `fonts-src/` (the SFD files there are the editable source) and
-  writes `assets/fonts/`. `validate-skin` allows no other file in the package, so
+  writes `assets/fonts/`. The metadata of the sources (Bold style bits, the
+  VELO copyright line) is set by `tools/patch-font-metadata.py`. `validate-skin` allows no other file in the package, so
   the sources live next to `skin/`, not inside it.
 
 ## Open (owner / designer decisions)

@@ -10,6 +10,11 @@ copy in `skin/LICENSE` carries the same text.
 | `VELOMarmelad-<Face>.ttf` | the built font; the input of the subset, and the file to install on a machine (Figma, design tools) |
 | `OFL.txt` | SIL Open Font License 1.1 with the VELO line |
 
+The four TTF files install as one family "VELO Marmelad" (Light, Regular,
+Medium, Bold). Their metadata was set by `tools/patch-font-metadata.py`
+(Bold style bits, the VELO copyright line in nameID 0 and in the `.sfd`); the
+script is idempotent and changes nothing else.
+
 The package ships subsets, not these files. To rebuild them (needs `uvx`):
 
 ```sh

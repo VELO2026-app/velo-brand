@@ -3,7 +3,7 @@ FontName: VELOMarmelad-Bold
 FullName: VELO Marmelad Bold
 FamilyName: VELO Marmelad
 Weight: Bold
-Copyright: Copyright 2016 The Marmelad Project Authors (https://github.com/cyrealtype/Marmelad-Cyrillic)
+Copyright: Copyright 2016 The Marmelad Project Authors (https://github.com/cyrealtype/Marmelad-Cyrillic). Copyright 2026 VELO.
 Version: 1.102
 ItalicAngle: 0
 UnderlinePosition: -125
@@ -16,7 +16,7 @@ LayerCount: 2
 Layer: 0 1 "Back" 1
 Layer: 1 1 "Fore" 0
 XUID: [1021 417 -2111144624 6072]
-StyleMap: 0x0040
+StyleMap: 0x0020
 FSType: 0
 OS2Version: 4
 OS2_WeightWidthSlopeOnly: 0
