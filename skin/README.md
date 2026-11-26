@@ -26,25 +26,33 @@ family (Light stays in `fonts-src/` until the app uses it), each a `woff2`
 subset of Latin + Cyrillic with the Ukrainian letters (і ї є ґ), the
 apostrophes (U+0027, U+2019, U+02BC), the punctuation and symbols the app text
 uses, and the currencies ₽ € ₴ (530 code points; kerning and ligatures kept,
-hinting dropped).
+TrueType hinting kept in all three).
 
 | File (`assets/fonts/`) | Face | `weight` | Bytes |
 |---|---|---|---|
-| `velo-marmelad-regular.woff2` | Regular | 400 (the only face velo preloads) | 23 916 |
-| `velo-marmelad-medium.woff2` | Medium | 500 | 39 440 |
-| `velo-marmelad-bold.woff2` | Bold | 700 | 40 712 |
+| `velo-marmelad-regular.woff2` | Regular | 400 (preloaded) | 35 552 |
+| `velo-marmelad-medium.woff2` | Medium | 500 | 59 036 |
+| `velo-marmelad-bold.woff2` | Bold | 700 (preloaded: the heading face) | 61 000 |
 
 - `bare.font-body` names the family `VELO Marmelad`; `fonts` of the brand record
   lists the three faces. velo writes one `@font-face` per face, so a face
-  loads when text of its weight is drawn; the first paint needs Regular only.
+  loads when text of its weight is drawn; velo preloads Regular and the face of
+  headings and buttons (Bold).
 - `velo.fw.medium` = 500 and `velo.fw.bold` = 700 map the app's emphasis steps
-  (headings, buttons, titles; strong accents) to the Medium and Bold faces. The
-  velo core keeps 600 / 700, so Goodo (variable Manrope) is unchanged.
+  to the Medium and Bold faces; `velo.fw.heading` = `{velo.fw.bold}` puts
+  headings, header titles and buttons on Bold (owner, 26.11; the velo core
+  keeps them on its medium step, so Goodo (variable Manrope) is unchanged).
+- Hinting: Regular carries the TrueType instructions it was built with (the
+  same as in 0.2.0 and before); Medium and Bold had none in the sources, so
+  `tools/autohint-missing.py` runs ttfautohint on them before the subset. A
+  renderer that applies hinting (Chromium on Linux, DirectWrite on Windows)
+  then sets all three faces alike, and Regular text sets as it did before.
 - The `woff2` files are built, not edited: `tools/subset-fonts.sh` reads the TTF
   files of `fonts-src/` (the SFD files there are the editable source) and
   writes `assets/fonts/`. The metadata of the sources (Bold style bits, the
-  VELO copyright line) is set by `tools/patch-font-metadata.py`. `validate-skin` allows no other file in the package, so
-  the sources live next to `skin/`, not inside it.
+  VELO copyright line) is set by `tools/patch-font-metadata.py`. `validate-skin`
+  allows no other file in the package, so the sources live next to `skin/`, not
+  inside it.
 
 ## Open (owner / designer decisions)
 

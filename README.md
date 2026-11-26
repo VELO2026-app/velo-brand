@@ -19,8 +19,9 @@ through `subpath` in the passport (`subpath` is required -- the repository
 root is not a package). X.Y.Z is the tag: v0.1.0 (contract 2.0, any velo
 with skin contract 2.x), v0.1.1 (contract 2.1, velo with FE-230 and later),
 v0.2.0 (contract 2.2, velo with FE-251 and later), v0.3.0 (contract 2.4, velo
-with FE-278 and later: the weight tokens `velo.fw.*` and the preload of the
-regular face only):
+with FE-278 and later: the weight tokens `velo.fw.medium` and `velo.fw.bold`
+and the preload of the regular face only), v0.3.1 (contract 2.4, velo with the
+heading weight token `velo.fw.heading`, FE-278 PR "pin v0.3.0"):
 
 ```yaml
 packages:
