@@ -14,7 +14,8 @@ other faces linear: the three would not set alike.
 For every VELOMarmelad-*.ttf in SRC_DIR this script writes the file to OUT_DIR:
 copied as is when some glyph has instructions, run through ttfautohint with
 its default settings (the ones the original Regular was built with) when none
-has. The output is what tools/subset-fonts.sh subsets. The sources in
+has. `no_info` keeps the tool's own line out of name ID 5 (the version string
+stays "Version 1.102", like Regular's). The output is what tools/subset-fonts.sh subsets. The sources in
 fonts-src/ are not touched. The input fonts are read as data.
 """
 import shutil
@@ -47,7 +48,7 @@ def main():
             shutil.copyfile(ttf, target)
             print(f"{ttf.name}: has instructions, copied")
         else:
-            ttfautohint.ttfautohint(in_file=str(ttf), out_file=str(target))
+            ttfautohint.ttfautohint(in_file=str(ttf), out_file=str(target), no_info=True)
             # ttfautohint stamps head.modified with the time of the run; the
             # source's own value keeps the output (and the woff2) reproducible.
             hinted = TTFont(target, recalcTimestamp=False)

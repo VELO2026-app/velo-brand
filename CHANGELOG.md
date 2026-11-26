@@ -4,8 +4,8 @@
 
 FE-278 (https://linear.app/velo-space/issue/FE-278), owner's decisions 26.11:
 headings and buttons of the golden skin are Bold, and the TrueType hinting
-comes back. Needs velo with the heading weight token `velo.fw.heading` (the
-FE-278 PR "pin v0.3.0"); contract stays `2.4`.
+comes back. Needs velo with the heading weight token `velo.fw.heading` (velo
+PR #240); contract stays `2.4`.
 
 - `skin/tokens/skin.tokens.json`: new `velo.fw.heading` = `{velo.fw.bold}`
   (headings, header titles and buttons use Bold; the velo core keeps its medium
@@ -18,9 +18,19 @@ FE-278 PR "pin v0.3.0"); contract stays `2.4`.
   instructions in all 288 shared glyphs that have any, same fpgm / prep / cvt /
   gasp). Medium and Bold had no instructions in the sources, so
   `tools/autohint-missing.py` runs ttfautohint (ttfautohint-py 0.6.1, default
-  settings) on them first; the glyph outlines and widths are untouched.
-  Sizes: Regular 23 916 -> 35 552 B, Medium 39 440 -> 59 036 B, Bold 40 712 ->
-  61 000 B (0.2.0: one file, 31 868 B). The output is reproducible.
+  settings, `no_info`: name ID 5 stays "Version 1.102") on them first; the
+  glyph outlines and widths are untouched.
+  Sizes: Regular 23 916 -> 35 552 B, Medium 39 440 -> 58 972 B, Bold 40 712 ->
+  60 860 B (0.2.0: one file, 31 868 B). The output is reproducible.
+- **Known gap, Medium and Bold.** ttfautohint gives no instructions to 28
+  glyphs of the Medium subset and 30 of the Bold subset (Regular: none). They
+  render unhinted, so on Linux and Windows they sit on the pixel grid a little
+  differently from their neighbours. The ones the app text uses: `! $ K M N Y
+  k`, `И Й Ч д и ф` (Bold also `Д Ж`); the rest are rare (`¡ ¢ þ ћ`, Cyrillic
+  extensions such as `ү Ҷ ҷ Ҹ ҹ Ӌ ӌ`, Bold also `ѣ Ѫ Җ Һ`). In the sources these
+  letters are one dense contour of 330 to 780 points (in Regular: 28 to 44
+  points), the outline of a stroke. The fix is in the sources (the `.sfd`
+  outlines), not in this package, and is a separate task.
 - `tools/subset-fonts.sh` runs the autohint step and no longer passes
   `--no-hinting`.
 

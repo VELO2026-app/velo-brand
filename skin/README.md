@@ -31,8 +31,8 @@ TrueType hinting kept in all three).
 | File (`assets/fonts/`) | Face | `weight` | Bytes |
 |---|---|---|---|
 | `velo-marmelad-regular.woff2` | Regular | 400 (preloaded) | 35 552 |
-| `velo-marmelad-medium.woff2` | Medium | 500 | 59 036 |
-| `velo-marmelad-bold.woff2` | Bold | 700 (preloaded: the heading face) | 61 000 |
+| `velo-marmelad-medium.woff2` | Medium | 500 | 58 972 |
+| `velo-marmelad-bold.woff2` | Bold | 700 (preloaded: the heading face) | 60 860 |
 
 - `bare.font-body` names the family `VELO Marmelad`; `fonts` of the brand record
   lists the three faces. velo writes one `@font-face` per face, so a face
