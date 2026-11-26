@@ -1,0 +1,27 @@
+# VELO Marmelad -- font sources
+
+VELO Marmelad is Marmelad (Cyreal, SIL OFL 1.1) modified and renamed by VELO:
+Light, Regular, Medium, Bold. `OFL.txt` is the license of these files; the
+copy in `skin/LICENSE` carries the same text.
+
+| File | What |
+|---|---|
+| `VELOMarmelad-<Face>.sfd` | FontForge source of the face (the editable source) |
+| `VELOMarmelad-<Face>.ttf` | the built font; the input of the subset, and the file to install on a machine (Figma, design tools) |
+| `OFL.txt` | SIL Open Font License 1.1 with the VELO line |
+
+The four TTF files install as one family "VELO Marmelad" (Light, Regular,
+Medium, Bold). Their metadata was set by `tools/patch-font-metadata.py`
+(Bold style bits, the VELO copyright line in nameID 0 and in the `.sfd`); the
+script is idempotent and changes nothing else.
+
+The package ships subsets of Regular, Medium and Bold, not these files. Light is
+kept here as a source and is not shipped until the app uses it. To rebuild them (needs `uvx`):
+
+```sh
+tools/subset-fonts.sh        # fonts-src/*.ttf -> skin/assets/fonts/*.woff2
+```
+
+The script pins the tool versions, so the output is the same on every machine.
+Run it from this repository, never from a folder that holds untrusted font
+archives: it reads fonts as data only.

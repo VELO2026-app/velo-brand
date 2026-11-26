@@ -2,10 +2,11 @@
 
 The golden look of velo (token generation 2), as data. Values were taken from
 velo `frontend/tokens.json` (`deploy-machine` 1b57405e); assets are the files
-of `frontend/public/` (icons, `bg/`, `onboarding/`, `fonts/`).
+of `frontend/public/` (icons, `bg/`, `onboarding/`). The font is VELO Marmelad
+(since 0.3.0, FE-278).
 
 ```
-primer-package.yaml          schema: 1, contract: "2.2"
+primer-package.yaml          schema: 1, contract: "2.4"
 tokens/brand.tokens.json     $extensions["velo-skin"]: displayName, shortName,
                              themeColor, backgroundColor, fonts,
                              contrastExceptions, supportEmail
@@ -13,8 +14,37 @@ tokens/skin.tokens.json      W3C DTCG values at the paths of velo's
                              frontend/tokens.json (velo.*, bare.font-body)
 assets/                      logos, mandalas, favicon, PWA icons;
                              assets/bg/, assets/onboarding/, assets/fonts/
-LICENSE                      SIL OFL 1.1 of Marmelad (the shipped font)
+LICENSE                      SIL OFL 1.1 of VELO Marmelad (the shipped font)
+                             and the scope of that license
 ```
+
+## Font: VELO Marmelad (FE-278)
+
+Marmelad, modified and renamed by VELO (SIL OFL 1.1, no reserved font name;
+the notice of the modification is in `LICENSE`). Three faces of a four-face
+family (Light stays in `fonts-src/` until the app uses it), each a `woff2`
+subset of Latin + Cyrillic with the Ukrainian letters (і ї є ґ), the
+apostrophes (U+0027, U+2019, U+02BC), the punctuation and symbols the app text
+uses, and the currencies ₽ € ₴ (530 code points; kerning and ligatures kept,
+hinting dropped).
+
+| File (`assets/fonts/`) | Face | `weight` | Bytes |
+|---|---|---|---|
+| `velo-marmelad-regular.woff2` | Regular | 400 (the only face velo preloads) | 23 916 |
+| `velo-marmelad-medium.woff2` | Medium | 500 | 39 440 |
+| `velo-marmelad-bold.woff2` | Bold | 700 | 40 712 |
+
+- `bare.font-body` names the family `VELO Marmelad`; `fonts` of the brand record
+  lists the three faces. velo writes one `@font-face` per face, so a face
+  loads when text of its weight is drawn; the first paint needs Regular only.
+- `velo.fw.medium` = 500 and `velo.fw.bold` = 700 map the app's emphasis steps
+  (headings, buttons, titles; strong accents) to the Medium and Bold faces. The
+  velo core keeps 600 / 700, so Goodo (variable Manrope) is unchanged.
+- The `woff2` files are built, not edited: `tools/subset-fonts.sh` reads the TTF
+  files of `fonts-src/` (the SFD files there are the editable source) and
+  writes `assets/fonts/`. The metadata of the sources (Bold style bits, the
+  VELO copyright line) is set by `tools/patch-font-metadata.py`. `validate-skin` allows no other file in the package, so
+  the sources live next to `skin/`, not inside it.
 
 ## Open (owner / designer decisions)
 
