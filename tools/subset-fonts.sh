@@ -9,9 +9,14 @@
 #
 # The subset is Latin + Cyrillic with the Ukrainian letters (і ї є ґ, Ґ) and
 # both apostrophes (U+0027, U+2019, U+02BC), the punctuation and symbols the
-# app text uses, and the currencies ₽ € ₴. Hinting is dropped: the TrueType
-# instructions are about a third of each file and only matter for old
-# Windows GDI rendering. Layout features stay (kerning, marks, ligatures).
+# app text uses, and the currencies ₽ € ₴. Layout features stay (kerning,
+# marks, ligatures).
+#
+# TrueType hinting stays (v0.3.1): a renderer that applies it (Chromium on
+# Linux, DirectWrite on Windows) rounds the advance widths of a hinted face, so
+# an unhinted Regular sets text slightly differently from the old hinted one.
+# Regular comes hinted from the source; Medium and Bold have no instructions
+# in the source, so tools/autohint-missing.py runs ttfautohint on them first.
 #
 # The script reads the fonts as data and writes only into OUT_DIR. It runs
 # the tool from an empty temporary directory so nothing from the font
@@ -36,16 +41,21 @@ cd "$WORK"
 # Light is not shipped until the app uses it (owner, 26.11): its TTF and SFD stay
 # in fonts-src/. To ship it again, add Light to the list and to `fonts` of
 # skin/tokens/brand.tokens.json (weight 300).
-for style in Regular Medium Bold; do
+FACES="Regular Medium Bold"
+mkdir "$WORK/in"
+for style in $FACES; do cp "$SRC/VELOMarmelad-$style.ttf" "$WORK/in/"; done
+uvx --from ttfautohint-py==0.6.1 --with fonttools==4.69.1 python -I \
+  "$ROOT/tools/autohint-missing.py" "$WORK/in" "$WORK/hinted"
+
+for style in $FACES; do
   lower=$(printf '%s' "$style" | tr 'A-Z' 'a-z')
   uvx --with brotli==1.2.1 --from fonttools==4.69.1 pyftsubset \
-    "$SRC/VELOMarmelad-$style.ttf" \
+    "$WORK/hinted/VELOMarmelad-$style.ttf" \
     --unicodes="$UNICODES" \
     --flavor=woff2 \
     --layout-features='*' \
     --name-IDs='0,1,2,3,4,5,6,13,14' \
     --notdef-outline \
-    --no-hinting \
     --output-file="$OUT/velo-marmelad-$lower.woff2"
   printf '%s %s bytes\n' "velo-marmelad-$lower.woff2" "$(wc -c < "$OUT/velo-marmelad-$lower.woff2" | tr -d ' ')"
 done

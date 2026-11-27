@@ -692,6 +692,9 @@
       "medium": {
         "$value": 500
       },
+      "heading": {
+        "$value": "{velo.fw.bold}"
+      },
       "bold": {
         "$value": 700
       }
